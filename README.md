@@ -1,2 +1,3 @@
 # AdvancedCpp
-Practice some advanced feature and skills
+Practice some advanced features and skills
+
