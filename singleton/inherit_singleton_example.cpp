@@ -1,5 +1,5 @@
 // author: sunchaothu
-// breif: a singleton base class offering an easy way to create singleton
+// brief: a singleton base class offering an easy way to create singleton
 // ref:
 // 1. https://stackoverflow.com/questions/34519073/inherit-singleton?r=SearchResults
 // 2. https://www.cnblogs.com/lidabo/p/3949226.html
