@@ -6,36 +6,34 @@ template<typename T>
 class Singleton{
 public:
     static T& get_instance() noexcept(std::is_nothrow_constructible<T>::value){
-        static T instance;
+        static T instance{token()};
         return instance;
     }
-    virtual ~Singleton() noexcept{
-        std::cout<<"destructor called!"<<std::endl;
-    }
+    virtual ~Singleton() =default;
     Singleton(const Singleton&)=delete;
     Singleton& operator =(const Singleton&)=delete;
 protected:
-    Singleton(){
-        std::cout<<"constructor called!"<<std::endl;
-    }
-
+    struct token{}; // helper class
+    Singleton() noexcept=default;
 };
+
+
 /********************************************/
 // Example:
-// 1.friend class declaration is requiered!
-// 2.constructor should be private
+// constructor should be public because protected `token` control the access
 
 
 class DerivedSingle:public Singleton<DerivedSingle>{
-   // !!!! attention!!!
-   // needs to be friend in order to
-   // access the private constructor/destructor
-   friend class Singleton<DerivedSingle>;
 public:
+   DerivedSingle(token){
+       std::cout<<"destructor called!"<<std::endl;
+   }
+
+   ~DerivedSingle(){
+       std::cout<<"constructor called!"<<std::endl;
+   }
    DerivedSingle(const DerivedSingle&)=delete;
    DerivedSingle& operator =(const DerivedSingle&)= delete;
-private:
-   DerivedSingle()=default;
 };
 
 int main(int argc, char* argv[]){
