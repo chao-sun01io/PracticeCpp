@@ -4,7 +4,7 @@
 #include <chrono>
 #include "clock.hpp"
 
-int main()
+int main(int argc, char** agrv)
 {
     std::cout << "system_clock: " << std::endl;
     printClockData<std::chrono::system_clock>();
@@ -16,4 +16,5 @@ int main()
 #ifdef _WIN32
     system("pause");
 #endif
+    return 0;
 }

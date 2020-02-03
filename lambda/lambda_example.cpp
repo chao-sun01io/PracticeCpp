@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <string>
 #include <algorithm> // for_each
 int external = 1;
 void func(int param){
@@ -22,6 +23,6 @@ int main(){
 //    std::vector<std::string> str_vec(&str[0],&str[5]); // It outputs "I love C++",but str[5] the index is overflow!
     std::vector<std::string> str_vec(str,str+5); // good!
     std::for_each(str_vec.begin(),str_vec.end(),
-                  [](const std::string& s){std::cout<<s;}); // empty capture list;
+                  [](const std::string& s){ std::cout <<  s;}); // empty capture list;
     return 0;
 }
