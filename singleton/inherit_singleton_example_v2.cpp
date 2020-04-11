@@ -26,11 +26,11 @@ protected:
 class DerivedSingle:public Singleton<DerivedSingle>{
 public:
    DerivedSingle(token){
-       std::cout<<"destructor called!"<<std::endl;
+       std::cout<<"constructor called!"<<std::endl;
    }
 
    ~DerivedSingle(){
-       std::cout<<"constructor called!"<<std::endl;
+       std::cout<<"destructor called!"<<std::endl;
    }
    DerivedSingle(const DerivedSingle&)=delete;
    DerivedSingle& operator =(const DerivedSingle&)= delete;
