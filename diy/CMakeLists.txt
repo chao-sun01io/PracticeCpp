@@ -1,0 +1,1 @@
+add_executable(test_unique_ptr test/test_unique_ptr.cpp)
