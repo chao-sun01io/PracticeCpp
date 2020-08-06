@@ -13,8 +13,12 @@ class unique_ptr {
     this->swap(other);
     return *this;
   }
+  
+  // TODO: Constructor/Assignment that allows move semantics
+  // template<typename U>
+  // unique_ptr(unique_ptr<U>&& moving);
 
-  // move and swap  idiom replace the move assignment operator
+  // move and swap  idiom 
   // unique_ptr &operator=(unique_ptr rhs) noexcept  // will call move constructor
   // {
   //   // std::swap(ptr_, rhs.ptr_);// is also ok
