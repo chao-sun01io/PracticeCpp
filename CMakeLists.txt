@@ -10,4 +10,3 @@ add_subdirectory(diy)
 add_executable(callback_ex callback_function/callback_function_example.cpp)
 add_executable(callback_bind_class_func_ex callback_function/callback_bind_class_member_function.cpp)
 add_executable(lambda_ex lambda/lambda_example.cpp)
-
