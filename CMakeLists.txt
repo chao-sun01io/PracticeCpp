@@ -1,7 +1,10 @@
 cmake_minimum_required(VERSION 2.8)
-project(PracticeCpp)
-set(CMAKE_CXX_FLAGS "-std=c++14")
-set(CMAKE_BUILD_TYPE "Debug")
+cmake_policy(SET CMP0048 NEW)
+project(PracticeCpp VERSION 0.0.1)
+
+set(CMAKE_CXX_FLAGS "-std=c++17")
+
+add_subdirectory(3rdparty/Catch2)
 
 add_subdirectory(singleton)
 add_subdirectory(chrono_timer)
