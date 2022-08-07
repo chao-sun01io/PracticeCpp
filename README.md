@@ -8,22 +8,33 @@ Practicing some modern or advanced features and skills with some portable code s
 - [X] lambda function
 - [X] callback
 - [X] chrono timer:  use \<chrono\> to implement a timer to compute the time of a program cost.
-- [ ] diy: implement some features of cpp for study purpose
+- [ ] diy: implement some toys of for study purpose
 
   - [ ] implementing smart ptr
     - [X] unique_ptr
+  - [ ] dsa: data structure and implementation
+    - [X] segment tree
 
 ## Build
+
 ### 3rd-party libraries
+
 This project uses [catchorg/Catch2](https://github.com/catchorg/Catch2) as unittest framework, which is as a git submodule.
 
 ```
 git clone --recurse-submodules https://github.com/charles-sun0v0/PracticeCpp 
 ```
+
 Alternatively, the user could `git clone` this then `cd 3rdparty` and run `git submodule init && git submodule update` to fetch dependencies.
 
 ### build with CMake
+
 This project uses modern CMake concepts which is target-based.
+
+```bash
+cd <path-to-PracticeCpp>
+cmake -S . -B build
+```
 
 ## Warning
 
