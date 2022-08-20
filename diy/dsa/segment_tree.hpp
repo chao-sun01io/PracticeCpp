@@ -26,7 +26,7 @@ class SegmentTree {
   void update(int idx, T val) {
     if (idx < 0 || idx >= n_) throw std::out_of_range("idx of range");
     tree_[idx + n_] = val;
-
+    // move upward and update parents
     for (int i = idx + n_; i > 0; i >>= 1) {
       tree_[i >> 1] = tree_[i] + tree_[i ^ 1];  // if m = 2*i,then m^1 = 2*i+1 and vice versa
     }
@@ -37,6 +37,9 @@ class SegmentTree {
     if (l < 0 || r > n_) throw std::out_of_range("idx of range");
 
     T res = 0;
+    // loop to find the sum in the range [L,R)
+    // if(l is odd) then its parent is not included in the result( L is the right child of its parent)
+    // if(r is odd) then (R-1)'s parent is not included in the result (R-1 is even,so it's the left child of it's parent)
     for (l = l + n_, r = r + n_; l > 0 && l < r; l >>= 1, r >>= 1) {
       if (l & 1) {
         res += tree_[l++];
